@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.RegularExpressions;
-using TwitchLib.Api.Helix.Models.Users.GetUsers;
 using TwitchLib.Client;
 using TwitchLib.Client.Events;
 using TwitchLib.Client.Models;
@@ -205,9 +203,6 @@ partial class Program
                     }
                 }
             }
-
-            // Simulate processing time
-            Thread.Sleep(100); // Adjust as needed
         }
     }
 
