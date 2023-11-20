@@ -28,5 +28,8 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Action For Semantic Release
       uses: cycjimmy/semantic-release-action@v4.0.0
+      with:
+        extra_plugins: |
+          @semantic-release/exec
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

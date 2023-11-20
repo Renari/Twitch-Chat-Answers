@@ -130,15 +130,17 @@ partial class Program
 
     private static void WriteLine(string message)
     {
-        // clear current line
         if (UserInputBuffer.Count == 0)
         {
             Console.WriteLine(message);
         }
         else
         {
+            // clear current line
             ClearCurrentConsoleLine();
+            // write output
             Console.WriteLine(message);
+            // restore input buffer
             WriteInputBuffer();
         }
     }

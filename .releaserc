@@ -4,6 +4,22 @@
   ],
   "plugins": [
     "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator"
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "TwitchChatAnswers.zip"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "zip TwitchChatAnswers.zip bin/Release/net6.0/*"
+      }
+    ]
   ]
 }
