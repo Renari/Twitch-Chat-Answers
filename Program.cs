@@ -124,7 +124,7 @@ partial class Program
             MessageCounts.Clear();
             UserMessages.Clear();
             File.WriteAllText("output.txt", "Answers:");
-            Console.WriteLine("Cleared Message Log");
+            WriteLine("Cleared Message Log");
         }
     }
 
@@ -212,6 +212,8 @@ partial class Program
         {
             // Convert the buffer to a string and display it
             var userInput = new string(UserInputBuffer.ToArray());
+            // Clear the buffer
+            UserInputBuffer.Clear();
             switch (userInput)
             {
                 case "clear":
@@ -221,15 +223,12 @@ partial class Program
                     _running = false;
                     break;
                 default:
-                    Console.WriteLine("Unknown command: " + userInput);
-                    Console.WriteLine("Available commands:");
-                    Console.WriteLine("clear - clear message logs");
-                    Console.WriteLine("exit - exit the program");
+                    WriteLine("Unknown command: " + userInput);
+                    WriteLine("Available commands:");
+                    WriteLine("clear - clear message logs");
+                    WriteLine("exit - exit the program");
                     break;
             }
-
-            // Clear the buffer
-            UserInputBuffer.Clear();
         }
     }
 
